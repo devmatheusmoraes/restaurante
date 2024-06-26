@@ -1,0 +1,2 @@
+1;Coca-Cola;10.00;true;Coca;350
+2;H2O;20.00;false;h2O;600

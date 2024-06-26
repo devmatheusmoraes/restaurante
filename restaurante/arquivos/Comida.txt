@@ -1,0 +1,2 @@
+3;Parmegiana;10.00;true;Arroz-Fritas;2
+4;Churrasco;100.00;false;Arroz-Feijão-Fritas-Farofa;3

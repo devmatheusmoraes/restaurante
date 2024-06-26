@@ -1,0 +1,4 @@
+COMIDA;10;10;Carne Assada;150.00;true;Arroz-Fritas;2
+COMIDA;11;11;Lasanha;100.00;false;Arroz-Feijão-Fritas-Farofa;3
+BEBIDA;12;12;Suco de Laranja;10.00;true;Coca;350
+BEBIDA;13;13;Suco de Maracujá;20.00;false;h2O;600
