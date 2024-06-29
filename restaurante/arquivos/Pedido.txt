@@ -1,7 +1,7 @@
-PEDIDO;1;Pedido1;9;10.00;21765-200
+PEDIDO;1;Pedido1;9;10.00;21765-200;21974315091
 COMIDA;5;Carne Assada;50.00;true;Arroz-Feijão-Fritas;5
 BEBIDA;6;Suco de Maracujá;8.00;true;Fruta;600
 COMIDA;7;Porção;20.00;true;Farofa;5
-PEDIDO;2;Pedido2;10;100.00;20766-650
+PEDIDO;2;Pedido2;10;100.00;20766-650;21979150350
 COMIDA;8;Frango Grelhado;80.00;false;Arroz-Feijão-Farofa;2
 BEBIDA;9;Suco de Uva;10.00;true;Pergola;350

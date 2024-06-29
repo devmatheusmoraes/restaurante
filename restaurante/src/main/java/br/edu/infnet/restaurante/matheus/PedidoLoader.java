@@ -1,9 +1,6 @@
 package br.edu.infnet.restaurante.matheus;
 
-import br.edu.infnet.restaurante.matheus.model.domain.Bebida;
-import br.edu.infnet.restaurante.matheus.model.domain.Comida;
-import br.edu.infnet.restaurante.matheus.model.domain.Endereco;
-import br.edu.infnet.restaurante.matheus.model.domain.Pedido;
+import br.edu.infnet.restaurante.matheus.model.domain.*;
 import br.edu.infnet.restaurante.matheus.model.service.ApiService;
 import br.edu.infnet.restaurante.matheus.model.service.EnderecoService;
 import br.edu.infnet.restaurante.matheus.model.service.PedidoService;
@@ -14,6 +11,7 @@ import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.util.Optional;
 
 @Component
 public class PedidoLoader implements ApplicationRunner {
@@ -48,12 +46,15 @@ public class PedidoLoader implements ApplicationRunner {
 
                     Endereco endereco = apiService.obterPorCep(campos[5]);
 
+                    Celular celular = apiService.obterCelularPorNumero(campos[6]);
+
                     this.pedido = new Pedido();
                     pedido.setCodigo(Integer.parseInt(campos[1]));
                     pedido.setDescricao(campos[2]);
                     pedido.setMesa(Integer.parseInt(campos[3]));
                     pedido.setTotal(Float.parseFloat(campos[4]));
                     pedido.setEnderecoEntrega(endereco);
+                    pedido.setCelularEntrega(Optional.ofNullable(celular).map(Celular::getFormat_national).orElse(""));
 
                     pedidoService.incluir(pedido);
 

@@ -37,6 +37,8 @@ public class Pedido {
     @JoinColumn(name = "idEndereco")
     private Endereco enderecoEntrega;
 
+    private String celularEntrega;
+
     @Column(name = "vlpedido")
     private float total;
 
@@ -60,13 +62,14 @@ public class Pedido {
 
     @Override
     public String toString(){
-        return String.format("Pedido { ID: %d - código: %d - nome: %s - Mesa: %d - Total: %.2f - Qtd Produtos: %d - Endereço: %s}",
+        return String.format("Pedido { ID: %d - código: %d - nome: %s - Mesa: %d - Total: %.2f - Qtd Produtos: %d - Celular Entrega: %s - Endereço: %s}",
                 this.getId(),
                 this.getCodigo(),
                 this.getDescricao(),
                 this.getMesa(),
                 this.getTotal(),
                 this.produtos.size(),
+                this.getCelularEntrega(),
                 this.getEnderecoEntrega()
         );
     }
