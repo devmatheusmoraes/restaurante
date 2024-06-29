@@ -21,8 +21,17 @@
 				<li class="nav-item"><a class="nav-link" href="/endereco/listagem">Endereços</a></li>
 
 				<li class="nav-item"><a class="nav-link" href="/estado/listagem">Estados</a></li>
-                <li class="nav-item"><a class="nav-link" href="/api/listagem">API</a></li>
 			</ul>
+
+			<form class="d-flex" action="/municipio/listagem" method="get">
+            	<select class="form-control me-2" name="uf">
+            		<c:forEach var="estado" items="${estados}">
+            			<option value="${estado.id}">${estado.nome} - ${estado.sigla}</option>
+            		</c:forEach>
+            	</select>
+            	<button class="btn btn-primary" type="submit">Municípios</button>
+            </form>
+
 		</div>
 	</nav>
 
@@ -61,8 +70,8 @@
 		                <h5 class="card-title">Matheus Moraes</h5>
 		                <p class="card-text"><strong>Telefone:</strong> (21) 97431-5091</p>
 		                <p class="card-text">Atuo como desenvolvedor Java.</p>
-		                <a href="https://github.com/devmatheusmoraes/restaurante" class="btn btn-primary">GitHub do Projeto</a>
-		                <a href="https://www.linkedin.com/in/matheus-moraes-ti/" class="btn btn-secondary">LinkedIn</a>
+		                <a href="https://github.com/devmatheusmoraes/restaurante" class="btn btn-primary" target="_blank">GitHub do Projeto</a>
+		                <a href="https://www.linkedin.com/in/matheus-moraes-ti/" class="btn btn-secondary" target="_blank">LinkedIn</a>
 		            </div>
 		        </div>
 		    </div>

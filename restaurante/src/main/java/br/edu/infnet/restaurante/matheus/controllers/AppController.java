@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class AppController {
@@ -18,8 +19,6 @@ public class AppController {
     @Autowired
     private EnderecoService enderecoService;
     @Autowired
-    private EstadoService estadoService;
-    @Autowired
     private ApiService apiService;
 
     @GetMapping(value = "/")
@@ -29,6 +28,7 @@ public class AppController {
         model.addAttribute("qtdeComida", comidaService.obterQtde());
         model.addAttribute("qtdeBebida", bebidaService.obterQtde());
         model.addAttribute("qtdeEndereco", enderecoService.obterQtde());
+        model.addAttribute("estados", apiService.obterEstados());
 
         return "home";
     }
@@ -73,16 +73,16 @@ public class AppController {
     public String listaEstados(Model model){
 
         model.addAttribute("titulo", "Listagem de Estados");
-        model.addAttribute("listagem", estadoService.obterLista());
+        model.addAttribute("listagem", apiService.obterEstados());
 
         return telaHome(model);
     }
 
-    @GetMapping(value = "/api/listagem")
-    public String listagem(Model model){
+    @GetMapping(value = "/municipio/listagem")
+    public String listaMunicipios(Model model, @RequestParam Integer uf){
 
-        model.addAttribute("titulo", "Listagem da API");
-        model.addAttribute("listagem", apiService.obterLista());
+        model.addAttribute("titulo", "Listagem de Municipios");
+        model.addAttribute("listagem", apiService.obterMunicipios(uf));
 
         return telaHome(model);
     }

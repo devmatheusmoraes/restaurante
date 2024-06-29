@@ -1,4 +1,4 @@
-package br.edu.infnet.restaurante.matheus.model.domain;
+package br.edu.infnet.matheusAPI.model.domain;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -25,5 +25,4 @@ public class Estado {
     public String toString() {
         return String.format("%d - %s [%s]", id, nome, sigla);
     }
-
 }

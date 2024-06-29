@@ -13,8 +13,6 @@ public class EnderecoService {
 
     @Autowired
     private EnderecoRepository enderecoRepository;
-    @Autowired
-    private ApiMatheusClient apiMatheusClient;
 
     public Collection<Endereco> obterLista() {
         return (Collection<Endereco>) enderecoRepository.findAll();
@@ -24,7 +22,4 @@ public class EnderecoService {
         return enderecoRepository.count();
     }
 
-    public Endereco obterPorCep(String cep) {
-        return apiMatheusClient.obterEnderecoPorCep(cep);
-    }
 }

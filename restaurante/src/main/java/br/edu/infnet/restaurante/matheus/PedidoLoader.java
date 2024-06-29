@@ -4,6 +4,7 @@ import br.edu.infnet.restaurante.matheus.model.domain.Bebida;
 import br.edu.infnet.restaurante.matheus.model.domain.Comida;
 import br.edu.infnet.restaurante.matheus.model.domain.Endereco;
 import br.edu.infnet.restaurante.matheus.model.domain.Pedido;
+import br.edu.infnet.restaurante.matheus.model.service.ApiService;
 import br.edu.infnet.restaurante.matheus.model.service.EnderecoService;
 import br.edu.infnet.restaurante.matheus.model.service.PedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,9 @@ public class PedidoLoader implements ApplicationRunner {
 
     @Autowired
     private EnderecoService enderecoService;
+
+    @Autowired
+    private ApiService apiService;
 
     Pedido pedido = null;
 
@@ -42,7 +46,7 @@ public class PedidoLoader implements ApplicationRunner {
 
                 case "PEDIDO":
 
-                    Endereco endereco = enderecoService.obterPorCep(campos[5]);
+                    Endereco endereco = apiService.obterPorCep(campos[5]);
 
                     this.pedido = new Pedido();
                     pedido.setCodigo(Integer.parseInt(campos[1]));
